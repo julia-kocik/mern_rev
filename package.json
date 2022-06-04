@@ -20,7 +20,8 @@
   "homepage": "https://github.com/julia-kocik/mern_rev#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mongoose": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
