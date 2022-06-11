@@ -49,8 +49,8 @@ UserSchema.methods.getSignedToken = function() {
 };
 
 UserSchema.methods.getResetPasswordToken = function() {
-    const resetToken = cryptio(20).toString("hex");
-    this.resetPasswordToken = cryptto.createHasz("sha256").update(ResetToken).digest("hex");
+    const resetToken = crypto.randomBytes(20).toString("hex");
+    this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
 
     this.resetPasswordExpire = Date.now() + 10* (60*1000)
     return resetToken
