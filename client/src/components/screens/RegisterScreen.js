@@ -1,14 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "./RegisterScreen.css"
+import { useNavigate } from "react-router-dom"
 
-const RegisterScreen = ({history}) => {
+
+const RegisterScreen = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  
+  useEffect(() => {
+    if(localStorage.getItem('authToken')) {
+      navigate('/');
+    }
+  }, [navigate])
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -31,7 +40,7 @@ const RegisterScreen = ({history}) => {
 
       localStorage.setItem("authToken", data.token)
 
-      history.push("/")
+      navigate("/")
     } catch (error) {
       setError(error.response.data.error)
       setTimeout(() => {
@@ -58,7 +67,7 @@ const RegisterScreen = ({history}) => {
           <input type='password' required id='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
         </div>
         <div className='form-group'>
-          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password'>Confirm Password:</label>
           <input type='password' required id='confirmpassword' placeholder='Confirm password' value={confirmpassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
         </div>
         <button type='submit' className='btn btn-primary'>Register</button>
