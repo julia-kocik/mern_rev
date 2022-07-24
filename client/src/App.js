@@ -24,7 +24,7 @@ const App = () => {
         <Route exact path="/login" element={<LoginScreen/>}/>
         <Route exact path="/register" element={<RegisterScreen/>}/>
         <Route exact path="/forgotpassword" element={<ForgotPasswordScreen/>}/>
-        <Route exact path="/passwordreset/:resetToken" element={<ResetPasswordScreen/>}/>
+        <Route exact path="/resetpassword/:resetToken" element={<ResetPasswordScreen/>}/>
       </Routes>
      </div>
    </Router>

@@ -55,6 +55,8 @@ const LoginScreen = () => {
         <button type='submit' className='btn btn-primary'>Login</button>
         <span className='register-screen__subtext'>Don't have an account? <Link to='/register'>Register</Link>
         </span>
+        <span className='register-screen__subtext'>Forgot password? <Link to='/forgotpassword'>Change password</Link>
+        </span>
       </form>
     </div>
   )
