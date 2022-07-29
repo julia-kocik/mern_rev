@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const Worksession = require("./Worksession");
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -24,7 +25,11 @@ const UserSchema = new mongoose.Schema({
         select: false
     }, 
     resetPasswordToken: String,
-    resetPasswordExpire: Date
+    resetPasswordExpire: Date,
+    sessions: {
+        type: [Worksession],
+        default: undefined,
+    }
 });
 
 UserSchema.pre("save", async function(next) {
