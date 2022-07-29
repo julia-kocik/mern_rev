@@ -9,6 +9,8 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/private/sessions', require('./routes/private'));
+app.use('/api/private/sessions/:id', require('./routes/private'));
 app.use('/api/private', require('./routes/private'));
 
 //Error Handler should be last piece of middleware;
