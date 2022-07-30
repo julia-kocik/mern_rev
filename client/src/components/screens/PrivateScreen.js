@@ -48,11 +48,11 @@ const PrivateScreen = () => {
   } else if(loading) {
     return <span className="error-message">Loading...</span>
   }
-  const {username} = privateData.user;
+  const {username, sessions} = privateData.user;
     return (
       <>
         <Header username={`${username[0].toUpperCase()}${username.slice(1)}`} logoutHandler={logoutHandler}/>
-        <MainSection/>
+        <MainSection sessions={sessions}/>
         <div>
         </div>
       </>
