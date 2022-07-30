@@ -8,7 +8,7 @@ const { protect } = require('../middleware/auth');
 
 router.route("/").get(protect, getPrivateData);
 router.route("/sessions").get(protect, getSessions);
-router.route("/sessions/:id").get(protect, getSession);
+// router.route("/sessions/:id").get(protect, getSession);
 router.route("/sessions").post(protect, postSession);
 
 module.exports = router;
