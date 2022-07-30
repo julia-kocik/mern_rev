@@ -1,3 +1,4 @@
+const User = require('../models/User');
 
 exports.getSessions = (req, res, next) => {
     res.status(200).json({
@@ -18,11 +19,35 @@ exports.getSession = (req, res, next) => {
     });
 };
 
-exports.postSession = (req, res, next) => {
-    res.status(200).json({
-        success: true,
-        data: "You've posted sessions data",
-    });
+//posts data to database, yet need to adjust data 
+exports.postSession = async (req, res, next) => {
+
+    const { session } = req.body;
+    const user = req.user;
+
+
+    try {
+        const userToUpdate = await User.findOne({ _id: user.id })
+        if(!userToUpdate.sessions) {
+            userToUpdate.sessions = [];
+            await userToUpdate.save();
+            res.status(200).json({
+                success: true,
+                data: "You've posted data",
+                emial: user.email
+            }); 
+        } else {
+            userToUpdate.sessions.push({session})
+            await userToUpdate.save();
+            res.status(200).json({
+                success: true,
+                data: "You've posted sessions data",
+            }); 
+        }
+
+    } catch (error) {
+        next(error);
+    }
 };
 
 exports.getPrivateData = (req, res, next) => {
