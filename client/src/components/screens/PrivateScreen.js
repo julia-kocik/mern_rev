@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 //components
 import Header from '../layout/Header';
+import MainSection from '../layout/MainSection';
 
 const PrivateScreen = () => {
   const [error, setError] = useState("");
@@ -51,6 +52,7 @@ const PrivateScreen = () => {
     return (
       <>
         <Header username={`${username[0].toUpperCase()}${username.slice(1)}`} logoutHandler={logoutHandler}/>
+        <MainSection/>
         <div>
         </div>
       </>
