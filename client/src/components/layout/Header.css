@@ -1,7 +1,7 @@
 .header__container {
     height: 100px;
     background-color: #fff;
-    box-shadow: 0 1px 1px 1px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 8px 1px rgb(0 0 0 / 10%);
     display: flex;
 }
 
