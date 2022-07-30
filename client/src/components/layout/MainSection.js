@@ -1,7 +1,8 @@
 import React from 'react'
 import "./MainSection.css"
 
-const MainSection = () => {
+const MainSection = props => {
+const {sessions} = props;
   return (
     <div className='mainsection__container'>
         <div className='mainsection__top'>
@@ -13,7 +14,8 @@ const MainSection = () => {
             </div>
         </div>
         <div className='mainsection__bottom'>
-                Session
+                Sessions: 
+                {sessions ? sessions.map(item => <h5>{item.name}</h5>) : "You have no saved sessions yet"}
         </div>
     </div>
   )
