@@ -19,13 +19,11 @@ exports.getSession = (req, res, next) => {
     });
 };
 
-//posts data to database, yet need to adjust data 
+//posted data updated, need to check and clean messages
 exports.postSession = async (req, res, next) => {
 
-    const { session } = req.body;
+    const { name, startDate, endDate, duration } = req.body;
     const user = req.user;
-
-
     try {
         const userToUpdate = await User.findOne({ _id: user.id })
         if(!userToUpdate.sessions) {
@@ -34,17 +32,15 @@ exports.postSession = async (req, res, next) => {
             res.status(200).json({
                 success: true,
                 data: "You've posted data",
-                emial: user.email
             }); 
         } else {
-            userToUpdate.sessions.push({session})
+            userToUpdate.sessions.push({name, startDate, endDate, duration})
             await userToUpdate.save();
             res.status(200).json({
                 success: true,
                 data: "You've posted sessions data",
             }); 
         }
-
     } catch (error) {
         next(error);
     }
