@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
+//components
+import Header from '../layout/Header';
 
-
-function PrivateScreen() {
+const PrivateScreen = () => {
   const [error, setError] = useState("");
   const [privateData, setPrivateData] = useState("");
   const [loading, setLoading] = useState(true);
@@ -40,21 +41,20 @@ function PrivateScreen() {
     localStorage.removeItem("authToken");
     navigate('/login');
   }
-
-  return error ? (
-     <span className="error-message">{error}</span>
-  ) : loading ? (
-    <span className="error-message">Loading...</span>
-
-  ) : (
-    <>
-      <div style={{ background: "green", color: "white"}}>{privateData.data}</div>
-      <div>
-        <h1>{`Hello ${privateData.user.username[0].toUpperCase()}${privateData.user.username.slice(1)}`}</h1>
-      </div>
-      <button onClick={logoutHandler}>Logout</button>
-    </>
-  )
+ 
+  if (error) {
+    return <span className="error-message">{error}</span>
+  } else if(loading) {
+    return <span className="error-message">Loading...</span>
+  }
+  const {username} = privateData.user;
+    return (
+      <>
+        <Header username={`${username[0].toUpperCase()}${username.slice(1)}`} logoutHandler={logoutHandler}/>
+        <div>
+        </div>
+      </>
+    )
 }
 
 export default PrivateScreen
