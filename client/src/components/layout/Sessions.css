@@ -6,7 +6,7 @@
 .sessions__section__title {
     color: #5B86E5;
     font-size: 36px;
-    padding-top: 12px;
+    padding: 12px 0 18px 0;
     text-shadow: 2px 2px 3px rgba(46, 46, 46, 0.2);
 }
 
