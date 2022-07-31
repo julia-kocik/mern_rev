@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 //components
 import Header from '../layout/Header';
 import MainSection from '../layout/MainSection';
+import Footer from '../layout/Footer';
 
 const PrivateScreen = () => {
   const [error, setError] = useState("");
@@ -53,8 +54,7 @@ const PrivateScreen = () => {
       <>
         <Header username={`${username[0].toUpperCase()}${username.slice(1)}`} logoutHandler={logoutHandler}/>
         <MainSection sessions={sessions}/>
-        <div>
-        </div>
+        <Footer/>
       </>
     )
 }
