@@ -16,6 +16,7 @@
 
 .header__username {
     font-size: 48px;
+    text-shadow: 2px 2px 3px rgba(46, 46, 46, 0.2);
 }
 
 .header__right {
@@ -37,6 +38,7 @@
     justify-content: center;
     margin-right: 14px;
     font-size: 24px;
+    box-shadow: 8px 8px 10px 1px rgba(46, 46, 46, 0.2);
 }
 
 .header__button {
@@ -48,4 +50,5 @@
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
+    box-shadow: 8px 8px 10px 1px rgba(46, 46, 46, 0.2);
 }
