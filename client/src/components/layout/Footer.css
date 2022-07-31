@@ -1,0 +1,10 @@
+.footer__container {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__span {
+    color: rgb(104, 103, 103);
+}
