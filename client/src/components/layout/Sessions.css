@@ -1,0 +1,25 @@
+.sessions__container {
+    flex: 0 0 68%;
+    padding-left: 40px;
+}
+
+.sessions__section__title {
+    color: #03b2cb;
+    font-size: 36px;
+    padding-top: 12px;
+}
+
+.sessions__session__container {
+    display: flex;
+    color: rgb(104, 103, 103);
+    justify-content: space-around;
+    max-width: 100%;
+    border-bottom: 1px solid #03b2cb;
+}
+
+.sessions__session__item {
+    flex: 0 0 23%;
+    font-size: 22px;
+    padding: 8px 0;
+    position: relative;
+}
