@@ -10,8 +10,9 @@
     display: flex;
     align-items: center;
     padding-left: 30px;
-    color: #03b2cb;
+    color: #5B86E5;
 }
+
 
 .header__username {
     font-size: 48px;
@@ -39,7 +40,7 @@
 }
 
 .header__button {
-    background: #03b2cb;
+    background: #5B86E5;
     border-color: transparent;
     color: #fff;
     height: 40px;
