@@ -1,0 +1,11 @@
+.diagram__container {
+    flex: 0 0 28%;
+    border-left: 1px solid #03b2cb;
+    text-align: center;
+}
+
+.diagram__section__title {
+    color: #03b2cb;
+    font-size: 36px;
+    padding-top: 12px;
+}
