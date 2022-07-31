@@ -9,6 +9,12 @@
     padding-top: 12px;
 }
 
+.sessions__section__subtitle {
+    color: #03b2cb;
+    font-size: 32px;
+    padding-top: 12px;
+}
+
 .sessions__session__container {
     display: flex;
     color: rgb(104, 103, 103);
