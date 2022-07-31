@@ -4,7 +4,7 @@ import './Clock.css';
 const Clock = () => {
   return (
     <div className='clock__container'>
-        <button className='clock__button'>Start</button>
+        <button className='clock__button__disabled active'>Start</button>
     </div>
   )
 }

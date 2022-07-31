@@ -9,3 +9,10 @@
     padding-top: 12px;
     text-shadow: 2px 2px 3px rgba(46, 46, 46, 0.2);
 }
+    
+.diagram__section__summary {
+    text-align: left;
+    padding-left: 100px;
+    padding-top: 50px;
+    font-size: 22px;
+}
