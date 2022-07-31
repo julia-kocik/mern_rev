@@ -2,7 +2,7 @@ import React from 'react'
 import "./Sessions.css"
 
 const Sessions = props => {
-const {sessions} = props;
+  const {sessions} = props;
   return (
     <div className='sessions__container'>
         <h2 className='sessions__section__title'>Sessions</h2> 
@@ -23,7 +23,11 @@ const {sessions} = props;
                 </div>
             </div>
         )) 
-        : "You have no saved sessions yet"}
+        : (
+            <div className='sessions__session__container'>
+                <h2 className='sessions__section__subtitle'>You have no saved sessions yet</h2> 
+            </div>
+        )}
     </div>
   )
 }
