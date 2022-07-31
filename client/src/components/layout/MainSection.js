@@ -3,6 +3,7 @@ import "./MainSection.css"
 import Sessions from './Sessions';
 import Diagram from './Diagram';
 import Clock from './Clock';
+import Requests from './Requests';
 
 const MainSection = props => {
 const {sessions} = props;
@@ -13,7 +14,7 @@ const {sessions} = props;
                 <Clock/>
             </div>
             <div className='mainsection__requests'>
-                Requests
+                <Requests/>
             </div>
         </div>
         <div className='mainsection__bottom'>
