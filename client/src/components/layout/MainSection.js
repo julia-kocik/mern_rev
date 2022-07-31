@@ -2,6 +2,7 @@ import React from 'react'
 import "./MainSection.css"
 import Sessions from './Sessions';
 import Diagram from './Diagram';
+import Clock from './Clock';
 
 const MainSection = props => {
 const {sessions} = props;
@@ -9,7 +10,7 @@ const {sessions} = props;
     <div className='mainsection__container'>
         <div className='mainsection__top'>
             <div className='mainsection__clock'>
-                Clock
+                <Clock/>
             </div>
             <div className='mainsection__requests'>
                 Requests
