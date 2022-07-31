@@ -1,0 +1,19 @@
+.clock__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.clock__button {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 48px;
+    border: transparent;
+    color: #fff;
+    background: #36D1DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
