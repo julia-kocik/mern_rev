@@ -26,14 +26,14 @@ exports.getSessions = async (req, res, next) => {
 //posted data updated, need to check and clean messages
 exports.postSession = async (req, res, next) => {
 
-    const { name, startDate, endDate, duration } = req.body;
+    const { name, date, counter } = req.body;
     const user = req.user;
     try {
         const userToUpdate = await User.findOne({ _id: user.id })
         if(!userToUpdate.sessions) {
             userToUpdate.sessions = [];
             await userToUpdate.save();
-            userToUpdate.sessions.push({name, startDate, endDate, duration})
+            userToUpdate.sessions.push({name, date, counter})
             await userToUpdate.save();
             res.status(200).json({
                 success: true,
@@ -41,7 +41,7 @@ exports.postSession = async (req, res, next) => {
             }); 
             return
         } else {
-            userToUpdate.sessions.push({name, startDate, endDate, duration})
+            userToUpdate.sessions.push({name, date, counter})
             await userToUpdate.save();
             res.status(200).json({
                 success: true,
