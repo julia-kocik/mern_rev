@@ -1,15 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "./Sessions.css";
 import {formatTime} from '../../utils/utils';
 
 const Sessions = props => {
-  const {sessions, rerendered} = props;
-  useEffect(() => {
-    console.log(`I'm rerendered`)
-  
-  }, [rerendered, sessions])
-  
-
+  const {sessions} = props;
   return (
     <div className='sessions__container'>
         <h2 className='sessions__section__title'>Sessions</h2> 
