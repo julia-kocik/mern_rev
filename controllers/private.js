@@ -33,10 +33,13 @@ exports.postSession = async (req, res, next) => {
         if(!userToUpdate.sessions) {
             userToUpdate.sessions = [];
             await userToUpdate.save();
+            userToUpdate.sessions.push({name, startDate, endDate, duration})
+            await userToUpdate.save();
             res.status(200).json({
                 success: true,
                 data: "You've posted data",
             }); 
+            return
         } else {
             userToUpdate.sessions.push({name, startDate, endDate, duration})
             await userToUpdate.save();

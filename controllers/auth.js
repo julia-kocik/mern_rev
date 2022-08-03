@@ -97,7 +97,7 @@ exports.resetpassword = async (req, res, next) => {
             resetPasswordToken: resetPasswordToken,
             resetPasswordExpire: { $gt: Date.now()}
         })
-
+        // console.log("user", user, resetPasswordToken)
         if(!user) {
             return next(new ErrorResponse("Invalid Reset Token", 400))
         }
