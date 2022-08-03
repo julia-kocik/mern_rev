@@ -1,8 +1,18 @@
 .requests__container {
     display: flex;
+    height: 100%;
+}
+
+.requests__container__left {
+   flex: 0 0 50%;
+}
+
+.requests__container__right {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    flex: 0 0 50%;
 }
 
 .requests__button__disabled {
