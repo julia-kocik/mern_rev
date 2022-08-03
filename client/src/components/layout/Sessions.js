@@ -1,8 +1,15 @@
-import React from 'react'
-import "./Sessions.css"
+import React, {useEffect} from 'react';
+import "./Sessions.css";
+import {formatTime} from '../../utils/utils';
 
 const Sessions = props => {
-  const {sessions} = props;
+  const {sessions, rerendered} = props;
+  useEffect(() => {
+    console.log(`I'm rerendered`)
+  
+  }, [rerendered, sessions])
+  
+
   return (
     <div className='sessions__container'>
         <h2 className='sessions__section__title'>Sessions</h2> 
@@ -10,16 +17,13 @@ const Sessions = props => {
         ? sessions.map(item => (
             <div className='sessions__session__container'>
                 <div className='sessions__session__item'>
-                    <h5>{`${item.name[0].toUpperCase()}${item.name.slice(1)}`}</h5>
+                    <h5>{item.name ? `${item.name[0].toUpperCase()}${item.name.slice(1)}` : 'Unnamed session'}</h5>
                 </div>
                 <div className='sessions__session__item'>
-                    <p>Start: {item.startDate}</p>
+                    <p>Date: {item.date}</p>
                 </div>
                 <div className='sessions__session__item'>                
-                    <p>End: {item.endDate}</p>
-                </div>
-                <div className='sessions__session__item'>
-                    <p>{item.duration}h</p>
+                    <p>Duration: {formatTime(item.counter)}</p>
                 </div>
             </div>
         )) 
