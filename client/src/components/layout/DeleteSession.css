@@ -1,0 +1,24 @@
+.delete__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.delete__button {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 36px;
+    border: transparent;
+    color: #fff;
+    cursor: pointer;
+    background: coral;
+    box-shadow: 2px 2px 8px 0.1px coral;
+}
+
+.disabled {
+    background: rgb(197, 197, 197);
+    box-shadow: 2px 2px 8px 0.1px rgb(197, 197, 197);
+}
+
