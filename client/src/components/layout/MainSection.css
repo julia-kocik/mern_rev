@@ -35,6 +35,6 @@
     border-radius: 20px;
     box-shadow: 2px 2px 20px 1px rgba(156, 156, 156, 0.2);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding-bottom: 40px;
 }

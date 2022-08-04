@@ -3,6 +3,7 @@ import "./MainSection.css"
 import Sessions from './Sessions';
 import Clock from './Clock';
 import Requests from './Requests';
+import DeleteSession from './DeleteSession';
 import {getDate} from '../../utils/utils';
 import axios from 'axios';
 
@@ -41,19 +42,28 @@ const postSession = async () => {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
   }
-
-  try {
-    const { data } = await axios.post(
-      "/api/private/sessions",
-      { name, date, counter },
-      config
-    );
-    console.log(data)
-  } catch (error) {
-    console.log(error)
-    console.log(name, date, counter)
+  if(date, counter) {
+    try {
+      const { data } = await axios.post(
+        "/api/private/sessions",
+        { name, date, counter },
+        config
+      );
+      console.log(data)
+      alert('Session succesfully posted')
+      setStatus('initial')
+      setDate(null);
+      setName('');
+      setCounter(0)
+    } catch (error) {
+      console.log(error)
+      console.log(name, date, counter)
+      alert(error);
+    }
+    setFetchSessionData(true)   
+  } else {
+    alert('Click start to open new session')
   }
-  setFetchSessionData(true)
 }
   return (
     <div className='mainsection__container'>
@@ -67,6 +77,7 @@ const postSession = async () => {
         </div>
         <div className='mainsection__bottom'>
               <Sessions sessions={sessions} />
+              <DeleteSession sessions={sessions}/>
         </div>
     </div>
   )
