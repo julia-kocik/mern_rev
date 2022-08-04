@@ -6,8 +6,7 @@ import Requests from './Requests';
 import {getDate} from '../../utils/utils';
 import axios from 'axios';
 
-const MainSection = props => {
-const {sessions} = props;
+const MainSection = ({sessions, setFetchSessionData}) => {
 const [status, setStatus] = useState('initial');
 const [counter, setCounter] = useState(0);
 const [name, setName] = useState('');
@@ -54,6 +53,7 @@ const postSession = async () => {
     console.log(error)
     console.log(name, date, counter)
   }
+  setFetchSessionData(true)
 }
   return (
     <div className='mainsection__container'>
