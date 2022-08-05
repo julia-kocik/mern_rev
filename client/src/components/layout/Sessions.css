@@ -26,8 +26,17 @@
 }
 
 .sessions__session__item {
-    flex: 0 0 32%;
+    flex: 0 0 30%;
     font-size: 22px;
     padding: 8px 0;
-    position: relative;
+}
+
+.sessions__session__item__last {
+    flex: 0 0 6%;
+    font-size: 22px;
+    padding: 8px 0;
+}
+
+.sessions__session__item__icon {
+    cursor: pointer;
 }

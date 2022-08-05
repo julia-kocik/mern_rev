@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Sessions.css";
 import {formatTime} from '../../utils/utils';
+import { AiFillDelete } from "react-icons/ai";
 
 const Sessions = props => {
   const {sessions} = props;
@@ -18,6 +19,9 @@ const Sessions = props => {
                 </div>
                 <div className='sessions__session__item'>                
                     <p>Duration: {formatTime(item.counter)}</p>
+                </div>
+                <div className='sessions__session__item__last'>                
+                    <p className='sessions__session__item__icon'><AiFillDelete/></p>
                 </div>
             </div>
         )) 
