@@ -57,12 +57,6 @@ const ResetPasswordScreen = () => {
         className="resetpassword-screen__form"
       >
         <h3 className="resetpassword-screen__title">Forgot Password</h3>
-        {error && <span className="error-message">{error} </span>}
-        {success && (
-          <span className="success-message">
-            {success} <Link to="/login">Login</Link>
-          </span>
-        )}
         <div className="form-group">
           <label htmlFor="password">New Password:</label>
           <input
@@ -90,6 +84,12 @@ const ResetPasswordScreen = () => {
         <button type="submit" className="btn btn-primary">
           Reset Password
         </button>
+        {error && <span className="error-message">{error} </span>}
+        {success && (
+          <span className="success-message">
+            {success} <Link to="/login" className='reset__links'>Login</Link>
+          </span>
+        )}
       </form>
     </div>
   );

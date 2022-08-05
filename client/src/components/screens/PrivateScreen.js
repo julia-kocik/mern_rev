@@ -55,7 +55,7 @@ const PrivateScreen = () => {
   if (error) {
     return <span className="error-message">{error}</span>
   } else if(loading) {
-    return <span className="error-message">Loading...</span>
+    return <span className="success-message">Loading...</span>
   }
   const {username, sessions} = privateData.user;
     return (

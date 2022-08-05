@@ -43,7 +43,6 @@ const LoginScreen = () => {
     <div className="login-screen">
       <form onSubmit={loginHandler} className="login-screen__form">
         <h3 className='login-screen_title'>Login</h3>
-        {error && <span className='error-message'>{error}</span>}
         <div className='form-group'>
           <label htmlFor='password'>Email:</label>
           <input type='email' required id='email' placeholder='Enter email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
@@ -52,11 +51,12 @@ const LoginScreen = () => {
           <label htmlFor='password'>Password:</label>
           <input type='password' required id='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
         </div>
-        <button type='submit' className='btn btn-primary'>Login</button>
-        <span className='register-screen__subtext'>Don't have an account? <Link to='/register'>Register</Link>
+        <button type='submit' className='btn btn-primary submit'>Login</button>
+        <span className='register-screen__subtext'>Don't have an account? <Link className='links' to='/register'>Register</Link>
         </span>
-        <span className='register-screen__subtext'>Forgot password? <Link to='/forgotpassword'>Change password</Link>
+        <span className='register-screen__subtext'>Forgot password? <Link className='links' to='/forgotpassword'>Change password</Link>
         </span>
+        {error && <span className='error-message'>{error}</span>}
       </form>
     </div>
   )

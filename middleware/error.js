@@ -8,7 +8,7 @@ const errorHandler = (err, req, res, next) => {
     console.log(err);
 
     if(err.code === 11000) {
-        const message = `Duplicate FieldValue Enter`;
+        const message = `Duplicate Email Entered`;
         error = new ErrorResponse(message, 400);
     }
 

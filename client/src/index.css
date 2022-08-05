@@ -32,6 +32,7 @@ body {
   background-color: #eee;
   outline-width: 0;
   font-size: 1rem;
+  border-radius: 10px;
 }
 
 .form-group input:focus {
@@ -51,7 +52,10 @@ body {
 }
 
 .btn-primary {
-  background-color: #5B86E5;
+  background: #36D1DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
   color: #fff;
 }
 
@@ -59,19 +63,26 @@ body {
   width: 100%;
   display: inline-block;
   padding: 5px;
-  background: rgba(46, 46, 46, 0.2);
-  font-size: 24px;
+  background: coral;
   color: #fff;
   text-align: center;
   margin: 0.5rem 0;
+  border-radius: 10px;
 }
 
 .success-message {
   width: 100%;
   display: inline-block;
   padding: 5px;
-  background: green;
+  background: lightgreen;
+  border-radius: 10px;
   color: #fff;
   text-align: center;
   margin: 0.5rem 0;
+}
+
+.links {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
