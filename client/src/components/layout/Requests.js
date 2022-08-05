@@ -9,7 +9,7 @@ return (
         <Diagram name={name} date={date} counter={counter} status={status}/>
       </div>
       <div className='requests__container__right'>
-        <button className={`requests__button__disabled ${status==='stopped' && 'active'}`} onClick={postSession}>Save</button>
+        <button tabIndex={2} className={`requests__button__disabled ${status==='stopped' && 'active'}`} onClick={postSession}>Save</button>
       </div>
     </div>
   )
