@@ -70,8 +70,29 @@ exports.deleteSessions = async (req, res, next) => {
         }
     } catch (error) {
         next(error);
-    }
-   
+    } 
+};
+
+exports.deleteOneSession = async (req, res, next) => {
+    const userToDelete = req.user;
+    try {
+        const user = await User.findOne({ _id: userToDelete.id })
+        if(!user.sessions || !user.sessions.length) {
+            res.status(200).json({
+                success: true,
+                data: "You have no saved sessions yet",
+            }); 
+        } else {
+            user.sessions = user.sessions.filter(item => item.id !== req.params.id);
+            await user.save();
+            res.status(200).json({
+                success: true,
+                data: user.sessions,
+            }); 
+        }
+    } catch (error) {
+        next(error);
+    } 
 };
 
 //general, to update or delete
