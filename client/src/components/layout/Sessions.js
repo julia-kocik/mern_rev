@@ -7,7 +7,7 @@ const Sessions = props => {
   return (
     <div className='sessions__container'>
         <h2 className='sessions__section__title'>Sessions</h2> 
-        {sessions  
+        {sessions.length  
         ? sessions.map(item => (
             <div className='sessions__session__container'>
                 <div className='sessions__session__item'>
