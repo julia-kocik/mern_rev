@@ -7,7 +7,7 @@ import DeleteSession from './DeleteSession';
 import {getDate} from '../../utils/utils';
 import axios from 'axios';
 
-const MainSection = ({sessions, setFetchSessionData}) => {
+const MainSection = ({sessions, setFetchSessionData, setDeleteSessionsData}) => {
 const [status, setStatus] = useState('initial');
 const [counter, setCounter] = useState(0);
 const [name, setName] = useState('');
@@ -77,7 +77,7 @@ const postSession = async () => {
         </div>
         <div className='mainsection__bottom'>
               <Sessions sessions={sessions} />
-              <DeleteSession sessions={sessions}/>
+              <DeleteSession sessions={sessions} setDeleteSessionsData={setDeleteSessionsData}/>
         </div>
     </div>
   )
