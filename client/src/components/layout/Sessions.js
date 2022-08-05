@@ -4,7 +4,7 @@ import {formatTime} from '../../utils/utils';
 import { AiFillDelete } from "react-icons/ai";
 import axios from 'axios';
 
-const Sessions = ({sessions}) => {
+const Sessions = ({sessions, setDeleteSessionData}) => {
     const handleDeleteOne = async (id) => {
           try {
             const config = {
@@ -19,6 +19,7 @@ const Sessions = ({sessions}) => {
             );
             console.log(data);
             alert('Session successfully deleted');
+            setDeleteSessionData(true)   
           } catch (error) {
             console.log(error)
             alert(error)
