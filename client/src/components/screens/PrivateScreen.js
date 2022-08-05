@@ -11,13 +11,15 @@ const PrivateScreen = () => {
   const [privateData, setPrivateData] = useState("");
   const [loading, setLoading] = useState(true);
   const [fetchSessionData, setFetchSessionData] = useState(true);
+  const [deleteSessionsData, setDeleteSessionsData] = useState(true);
+
 
   const navigate = useNavigate();
   useEffect(() => {
     if(!localStorage.getItem("authToken")) {
       navigate("/login")
     }
-    if(fetchSessionData) {
+    if(fetchSessionData || deleteSessionsData) {
     const fetchPrivateDate = async () => {
       const config = {
         headers: {
@@ -40,8 +42,9 @@ const PrivateScreen = () => {
   
     fetchPrivateDate()
     setFetchSessionData(false);
+    setDeleteSessionsData(false);
   }
-  }, [navigate, fetchSessionData, setFetchSessionData])
+  }, [navigate, fetchSessionData, setFetchSessionData, deleteSessionsData, setDeleteSessionsData])
   
   const logoutHandler = () => {
     localStorage.removeItem("authToken");
@@ -57,7 +60,7 @@ const PrivateScreen = () => {
     return (
       <>
         <Header username={`${username[0].toUpperCase()}${username.slice(1)}`} logoutHandler={logoutHandler}/>
-        <MainSection sessions={sessions} setFetchSessionData={setFetchSessionData}/>
+        <MainSection sessions={sessions} setFetchSessionData={setFetchSessionData} setDeleteSessionsData={setDeleteSessionsData}/>
         <Footer/>
       </>
     )
