@@ -43,7 +43,7 @@ const postSession = async () => {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
   }
-  if(date, counter && status !== 'ongoing') {
+  if(date && counter && status !== 'ongoing') {
     try {
       const { data } = await axios.post(
         `${API_URL}/private/sessions`,
