@@ -62,6 +62,8 @@ const postSession = async () => {
       alert(error);
     }
     setFetchSessionData(true)   
+  } else if(status==='ongoing') {
+    alert('Click timer to stop current session')
   } else {
     alert('Click start to open new session')
   }
