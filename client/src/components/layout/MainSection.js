@@ -6,6 +6,7 @@ import Requests from './Requests';
 import DeleteSession from './DeleteSession';
 import {getDate} from '../../utils/utils';
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 const MainSection = ({sessions, setFetchSessionData, setDeleteSessionsData, setDeleteSessionData}) => {
 const [status, setStatus] = useState('initial');
@@ -45,7 +46,7 @@ const postSession = async () => {
   if(date, counter && status !== 'ongoing') {
     try {
       const { data } = await axios.post(
-        "/api/private/sessions",
+        `${API_URL}/private/sessions`,
         { name, date, counter },
         config
       );

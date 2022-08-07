@@ -3,6 +3,7 @@ import "./Sessions.css";
 import {formatTime} from '../../utils/utils';
 import { AiFillDelete } from "react-icons/ai";
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 const Sessions = ({sessions, setDeleteSessionData}) => {
     const handleDeleteOne = async (id) => {
@@ -14,7 +15,7 @@ const Sessions = ({sessions, setDeleteSessionData}) => {
               }
             }
             const { data } = await axios.delete(
-              `/api/private/sessions/${id}`,
+              `${API_URL}/private/sessions/${id}`,
               config
             );
             console.log(data);
@@ -28,7 +29,7 @@ const Sessions = ({sessions, setDeleteSessionData}) => {
   return (
     <div className='sessions__container'>
         <h2 className='sessions__section__title'>Sessions</h2> 
-        {sessions.length  
+        {sessions && sessions.length  
         ? sessions.map(item => (
             <div key={item._id} className='sessions__session__container'>
                 <div className='sessions__session__item'>

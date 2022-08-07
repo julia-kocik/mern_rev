@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "./RegisterScreen.css"
 import { useNavigate } from "react-router-dom"
-
+import { API_URL } from '../../config';
 
 const RegisterScreen = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const RegisterScreen = () => {
     }
 
     try {
-      const {data} = await axios.post("/api/auth/register", {username, email, password}, config)
+      const {data} = await axios.post(`${API_URL}/auth/register`, {username, email, password}, config)
 
       localStorage.setItem("authToken", data.token)
 

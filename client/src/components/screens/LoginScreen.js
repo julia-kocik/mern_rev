@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./LoginScreen.css"
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { API_URL } from '../../config';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -26,7 +27,7 @@ const LoginScreen = () => {
     }
 
     try {
-      const {data} = await axios.post("/api/auth/login", { email, password}, config)
+      const {data} = await axios.post(`${API_URL}/auth/login`, { email, password}, config)
 
       localStorage.setItem("authToken", data.token)
 

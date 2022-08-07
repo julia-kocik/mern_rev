@@ -1,10 +1,11 @@
 import React from 'react';
 import './DeleteSession.css';
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 const DeleteSession = ({sessions, setDeleteSessionsData}) => {
   const handleDelete = async () => {
-    if(!sessions.length) {
+    if(!sessions || !sessions.length) {
       alert('No sessions to clear')
     } else {
       try {
@@ -15,7 +16,7 @@ const DeleteSession = ({sessions, setDeleteSessionsData}) => {
           }
         }
         const { data } = await axios.delete(
-          "/api/private/sessions",
+          `${API_URL}/private/sessions`,
           config
         );
         console.log(data);
@@ -29,7 +30,7 @@ const DeleteSession = ({sessions, setDeleteSessionsData}) => {
   }
   return (
     <div className='delete__container'>
-        <button tabIndex={3} className={`delete__button ${!sessions.length && 'disabled'}`} onClick={handleDelete}>Clear<br/>All</button>
+        <button tabIndex={3} className={`delete__button ${!sessions?.length && 'disabled'}`} onClick={handleDelete}>Clear<br/>All</button>
     </div>
   )
 }
