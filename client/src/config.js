@@ -1,1 +1,1 @@
-export const API_URL=(process.env.NODE_ENV === 'production') ? 'https://effulgent-sprinkles-e0e148.netlify.app/api' : 'http://localhost:5000/api';
+export const API_URL=(process.env.NODE_ENV === 'production') ? '/api' : 'http://localhost:5000/api';

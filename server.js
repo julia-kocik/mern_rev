@@ -20,10 +20,18 @@ app.use(errorHandler)
 const PORT = process.env.PORT || 5000;
 
 /* REACT WEBSITE */
-app.use(express.static(path.join(__dirname, '/client/build')));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '/client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '/client/build/index.html'));
+    });
+} else {
+    app.get("/", (req, res) => {
+        res.send("Api running");
+    });
+}
+
+
   
 
 const server = app.listen(process.env.PORT || 5000, () => console.log(`Server is running on ${PORT}`));

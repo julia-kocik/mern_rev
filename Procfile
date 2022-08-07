@@ -1,2 +1,1 @@
-web: yarn server
-console: script/rails console
+web: node server.js
