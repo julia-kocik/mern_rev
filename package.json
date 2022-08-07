@@ -27,7 +27,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.5",
     "nodemailer": "^6.7.5",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
