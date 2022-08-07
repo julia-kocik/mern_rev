@@ -10,6 +10,7 @@ const Clock = ({status, establishStatus, counter, startCounter}) => {
     return () => {
       clearInterval(timer)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter, status])
   
   return (
