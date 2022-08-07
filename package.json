@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "heroku-postbuild": "YARN_PRODUCTION=false && yarn install --prefix client && yarn build --prefix client"
+    "build": "cd client && yarn install && yarn build"
   },
   "repository": {
     "type": "git",
