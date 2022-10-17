@@ -37,7 +37,7 @@ const PrivateScreen = () => {
         setLoading(false);
         localStorage.removeItem("authToken");
         setError("You are not authorized, please login")
-        console.log(error)
+        navigate('/login');
       }
     }
   
